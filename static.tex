@@ -1,9 +1,22 @@
-\documentclass[11pt,oneside]{book}
+\documentclass[-no math,oneside]{book}
 \usepackage{xeCJK}
 \usepackage{indentfirst}
-\setCJKmainfont{宋体}
+\usepackage{amsmath}
+%xeCJK宏包使用了和fontspec宏包非常类似的语法设置中中文字体
+%fontspec宏包提供了几个设置全局字体的命令，
+%setmainfont{<font name>}[<font features>]
+%setsansfont{<font name>}[<font features>]
+%setmonofont[<font name]}[<font features>]
+%这样的格式是新版宏包推荐使用的格式。
+%在上面的格式中，<font name>使用字体的文件名或者字体的英文名称。
+%<font features>用来手动配置对应的粗体或斜体。
+%由于中文字体少有对应的粗体或斜体，<font features>
+%里多用其他字体来配置，
+\setCJKmainfont{宋体}[BoldFont={黑体}, ItalicFont={楷体}]
 \setCJKsansfont{黑体}
 \setCJKmonofont{黑体}
+\setlength{\parindent}{2em}
+\fontsize{12pt}{1.2}
 \begin{document}
 \input{jibengainian}
 \end{document}
